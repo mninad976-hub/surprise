@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Moments 🌹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d0d0d;
+      color: #d4c0c3;
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .petals { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .petal { position: absolute; top: -40px; opacity: 0; animation: fall linear infinite; }
+    @keyframes fall {
+      0%   { opacity: 0; transform: translateY(0) rotate(0deg); }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 20px 30px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .header-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.4rem;
+      color: #d4b483;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .header-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      font-weight: 600;
+      background: linear-gradient(135deg, #e8737d, #d4b483);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-sub {
+      font-style: italic;
+      color: #c47a82;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.2rem auto;
+      width: fit-content;
+    }
+    .dl { width: 50px; height: 1px; background: linear-gradient(to right, transparent, #d4b483); }
+    .dr { background: linear-gradient(to left, transparent, #d4b483); }
+
+    .collage {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .photo {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(232,115,125,0.12), 0 2px 8px rgba(0,0,0,0.5);
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cap {
+      background: rgba(13,13,13,0.75);
+      padding: 10px 14px;
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      animation: fadeUp 1s ease forwards 1.2s;
+      opacity: 0;
+    }
+
+    .nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25rem;
+      color: #d4b483;
+      text-decoration: none;
+      border: 1px solid rgba(212,180,131,0.3);
+      padding: 12px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover { background: rgba(212,180,131,0.1); }
+
+    .p1 { animation-delay: 0.1s; }
+    .p2 { animation-delay: 0.2s; }
+    .p3 { animation-delay: 0.3s; }
+    .p4 { animation-delay: 0.4s; }
+    .p5 { animation-delay: 0.5s; }
+    .p6 { animation-delay: 0.6s; }
+    .p7 { animation-delay: 0.7s; }
+    .p8 { animation-delay: 0.8s; }
+    .p9 { animation-delay: 0.9s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="petals" id="petals"></div>
+
+  <div class="header">
+    <span class="header-label">✦ &nbsp; just for you &nbsp; ✦</span>
+    <div class="header-title">Our Story 🌹</div>
+    <div class="header-sub">every frame, a little piece of us</div>
+    <div class="divider">
+      <div class="dl"></div>
+      <span style="color:#d4b483">🌹</span>
+      <div class="dl dr"></div>
+    </div>
+  </div>
+
+  <div class="collage">
+
+    <div class="photo p1">
+      <img src="c1.jpg" alt="" />
+      <div class="cap">my favourite cheek 🥺</div>
+    </div>
+
+    <div class="row">
+      <div class="photo p3">
+        <img src="c3.jpg" alt="" />
+        <div class="cap">she sees the world differently 🌿</div>
+      </div>
+      <div class="photo p4">
+        <img src="c4.jpg" alt="" />
+        <div class="cap">my person 💫</div>
+      </div>
+    </div>
+
+    <div class="photo p2">
+      <img src="c2.jpg" alt="" />
+      <div class="cap">us, always 🤍</div>
+    </div>
+
+    <div class="row">
+      <div class="photo p5">
+        <img src="c5.jpg" alt="" />
+        <div class="cap">that laugh tho 😭🤍</div>
+      </div>
+      <div class="photo p6">
+        <img src="c6.jpg" alt="" />
+        <div class="cap">good days with you 🌸</div>
+      </div>
+    </div>
+
+    <div class="photo p7">
+      <img src="c7.jpg" alt="" />
+      <div class="cap">she's everything ✨</div>
+    </div>
+
+    <div class="row">
+      <div class="photo p8">
+        <img src="c8.jpg" alt="" />
+        <div class="cap">unbothered, as always 🎨</div>
+      </div>
+      <div class="photo p9">
+        <img src="c9.jpg" alt="" />
+        <div class="cap">her smile hits different 🌹</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nav">
+    <a href="index.html">← back home</a>
+    <a href="surprise.html">surprise →</a>
+  </div>
+
+  <script>
+    const emojis = ['🌸', '🌹', '✨', '💗', '🎀'];
+    const container = document.getElementById('petals');
+    for (let i = 0; i < 14; i++) {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.fontSize = (0.7 + Math.random() * 0.8) + 'rem';
+      p.style.animationDuration = (8 + Math.random() * 10) + 's';
+      p.style.animationDelay = (Math.random() * 12) + 's';
+      container.appendChild(p);
+    }
+  </script>
+</body>
+</html>
